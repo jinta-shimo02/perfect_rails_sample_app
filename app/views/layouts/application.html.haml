@@ -24,6 +24,7 @@
       - if flash.notice
         .alert.alert-success
           = flash.notice
-        .alert.aler-danger
+      - if flash.alert
+        .alert.alert-danger
           = flash.alert
       = yield
