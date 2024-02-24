@@ -34,6 +34,6 @@ class Event < ApplicationRecord
   end
 
   def remove_image_if_user_accept
-    self.image = nil if ApplicationRecord::Type::Boolean.new.cast(remove_image)
+    self.image = nil if ActiveRecord::Type::Boolean.new.cast(remove_image)
   end
 end
