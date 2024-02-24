@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   skip_before_action :authenticate, only: :show
 
   def index
-    @events = Event.where("start_at > ?", Time.zone.now).order(:start_at)
+    @events = Event.page(params[:page]).per(10).where("start_at > ?", Time.zone.now).order(:start_at)
   end
 
   def show
@@ -43,6 +43,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :place, :content, :start_at, :end_at)
+    params.require(:event).permit(:name, :place, :content, :start_at, :end_at, :image, :remove_image)
   end
 end
