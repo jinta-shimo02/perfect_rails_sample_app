@@ -39,6 +39,9 @@ gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
 # locale
 gem 'rails-i18n', '~> 6.0.0'
 
+# active_storage_validation
+gem 'active_storage_validations', "~> 0.8.8"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
